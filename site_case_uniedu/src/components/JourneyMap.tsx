@@ -2,9 +2,15 @@ import { useState } from "react";
 import { Compass, Eye, ShieldAlert, Sparkles, MessageSquare, Smile } from "lucide-react";
 
 export default function JourneyMap() {
+  const [activePersona, setActivePersona] = useState<"sofia" | "marcos">("sofia");
   const [activeStage, setActiveStage] = useState("descoberta");
 
-  const stages = [
+  const handlePersonaChange = (persona: "sofia" | "marcos") => {
+    setActivePersona(persona);
+    setActiveStage("descoberta");
+  };
+
+  const sofiaStages = [
     {
       id: "descoberta",
       label: "1. Descoberta",
@@ -133,6 +139,129 @@ export default function JourneyMap() {
     }
   ];
 
+  const marcosStages = [
+    {
+      id: "descoberta",
+      label: "1. Descoberta",
+      desc: "Busca inicial",
+      contexto: "Marcos é UX Designer e busca aprimorar suas habilidades com um curso prático e otimizado que caiba em sua rotina de trabalho.",
+      acoes: [
+        "Pesquisa ementas de especialização avançada no Google",
+        "Assiste a reviews de didática no YouTube",
+        "Analisa a linearidade e objetividade dos temas propostos"
+      ],
+      pensamentos: [
+        "Quero entender o conteúdo avançado de UX/UI sem enrolação ou aulas prolixas.",
+        "Gosto de ver primeiro o que será criado para depois criar."
+      ],
+      sentimentos: ["Determinação", "Exigência", "Foco"],
+      dores: [
+        "Perda de foco e desinteresse quando o conteúdo é muito raso ou prolixo.",
+        "Dificuldade em identificar se o curso é prático antes da compra."
+      ],
+      oportunidades: [
+        "Exibir a linearidade da trilha avançada de especialização.",
+        "Oferecer uma aula de aplicação prática avançada como preview gratuito."
+      ]
+    },
+    {
+      id: "consideracao",
+      label: "2. Consideração",
+      desc: "Análise da Proposta",
+      contexto: "Marcos compara plataformas de ensino focando em ementas sólidas, acompanhamento humano e canais dinâmicos de interação.",
+      acoes: [
+        "Lê avaliações de ex-alunos e analisa os prazos dos cursos",
+        "Verifica se o suporte de monitores é ativo",
+        "Analisa a qualidade e metodologia dos vídeos"
+      ],
+      pensamentos: [
+        "Espero que a plataforma não seja chapada e ofereça um espaço de troca real com outros designers."
+      ],
+      sentimentos: ["Expectativa", "Critério", "Ansiedade"],
+      dores: [
+        "Plataformas de ensino tradicionais que são frias, estáticas e impessoais.",
+        "Suporte automatizado ou chatbots que tornam a experiência fria."
+      ],
+      oportunidades: [
+        "Proporcionar preview da plataforma destacando a comunidade e suporte.",
+        "Destacar a existência de canais de troca humana (café online)."
+      ]
+    },
+    {
+      id: "decisao",
+      label: "3. Decisão",
+      desc: "O Primeiro Passo",
+      contexto: "Marcos inicia o curso e planeja organizar suas sessões de estudos intercaladas com suas atividades profissionais.",
+      acoes: [
+        "Realiza o login e configura seu perfil na plataforma",
+        "Usa sua agenda pessoal para planejar as metas de estudo",
+        "Estrutura o cronograma integrando sessões de foco com a técnica Pomodoro"
+      ],
+      pensamentos: [
+        "Vou organizar meus estudos na agenda para manter a constância.",
+        "Quero começar aplicando o conhecimento em desafios reais o quanto antes."
+      ],
+      sentimentos: ["Motivação", "Organização", "Confiança"],
+      dores: [
+        "Dificuldade de sincronizar e terminar as entregas dentro do prazo.",
+        "Falta de suporte imediato para dúvidas metodológicas iniciais."
+      ],
+      oportunidades: [
+        "Onboarding inicial adaptável que ajude a organizar cronogramas flexíveis.",
+        "Disponibilizar resumos práticos e objetivos dos desafios logo no primeiro acesso."
+      ]
+    },
+    {
+      id: "adocao",
+      label: "4. Adoção",
+      desc: "Estudo Habitual",
+      contexto: "Estuda ativamente, priorizando conteúdos diretos e valorizando feedbacks de progresso constantes.",
+      acoes: [
+        "Utiliza Pomodoro e intercala o estudo com momentos de pausa",
+        "Acelera as aulas em vídeos prolixos para otimizar o tempo",
+        "Usa seu quadro de propósito pessoal para manter-se focado"
+      ],
+      pensamentos: [
+        "Quando o conteúdo das aulas fica muito prolixo eu perco foco, gosto de mais praticidade e otimização.",
+        "Quero saber exatamente a minha porcentagem concluída e o que falta."
+      ],
+      sentimentos: ["Produtividade", "Foco", "Urgência"],
+      dores: [
+        "Assuntos excessivamente prolixos deixam a pessoa entediada rapidamente.",
+        "Plataforma muito chapada que não celebra marcos de evolução de curto prazo."
+      ],
+      oportunidades: [
+        "Painel com barra de progresso em porcentagens claras por módulo.",
+        "Comemorações visuais ao atingir níveis/marcos e avatares customizados."
+      ]
+    },
+    {
+      id: "fidelizacao",
+      label: "5. Fidelização",
+      desc: "Evolução Tangível",
+      contexto: "Marcos finaliza partes do curso, buscando aplicar os aprendizados no mercado e fazer networking de valor.",
+      acoes: [
+        "Participa ativamente dos cafés online e espaços de troca de ideias",
+        "Compartilha seu progresso e certificado em suas redes",
+        "Busca novas indicações e parcerias profissionais na plataforma"
+      ],
+      pensamentos: [
+        "Gostei do curso, principalmente do apoio prático e das trocas.",
+        "Conseguir aplicar o conhecimento no meu dia a dia é o meu maior objetivo."
+      ],
+      sentimentos: ["Realização", "Orgulho", "Conexão"],
+      dores: [
+        "Dificuldade extrema de formar grupos no EAD e sincronizar agendas de trabalho.",
+        "Perda de contato com a rede profissional de alunos/monitores após o curso."
+      ],
+      oportunidades: [
+        "Espaço contínuo de café online dinâmico focado em facilitar grupos e networking.",
+        "Eventos de conexão entre ex-alunos formados e recrutadores."
+      ]
+    }
+  ];
+
+  const stages = activePersona === "sofia" ? sofiaStages : marcosStages;
   const current = stages.find((s) => s.id === activeStage) || stages[0];
 
   return (
@@ -141,10 +270,34 @@ export default function JourneyMap() {
         
         <div className="text-center mb-16 space-y-4">
           <span className="text-xs font-bold uppercase tracking-widest text-brand">Entendimento do Comportamento</span>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Jornada da Persona Sofia</h2>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Jornada do Usuário</h2>
           <p className="text-text-secondary max-w-3xl mx-auto text-sm leading-relaxed">
-            A jornada da Sofia organiza os principais momentos de decisão, uso e continuidade identificados na pesquisa. Ela ajudou a transformar dores comportamentais em oportunidades de produto, conectando motivação, suporte, progresso e retenção.
+            As jornadas sintetizam dois perfis comportamentais identificados na pesquisa. Sofia representa a aluna em transição de carreira que busca clareza, suporte e pertencimento. Marcos representa o aluno familiarizado com estudo online, que busca praticidade, aplicação direta, organização e progresso visível para manter ritmo.
           </p>
+        </div>
+
+        {/* Persona Selector Tabs */}
+        <div className="flex justify-center gap-3 mb-10">
+          <button
+            onClick={() => handlePersonaChange("sofia")}
+            className={`px-5 py-2.5 rounded-xl border text-xs font-bold transition-all duration-300 cursor-pointer ${
+              activePersona === "sofia"
+                ? "bg-surface-elevated border-brand/40 shadow-sm text-brand-strong scale-[1.01]"
+                : "bg-surface/30 border-border/40 text-text-secondary opacity-60 hover:opacity-100"
+            }`}
+          >
+            Jornada da Sofia Martins
+          </button>
+          <button
+            onClick={() => handlePersonaChange("marcos")}
+            className={`px-5 py-2.5 rounded-xl border text-xs font-bold transition-all duration-300 cursor-pointer ${
+              activePersona === "marcos"
+                ? "bg-surface-elevated border-brand/40 shadow-sm text-brand-strong scale-[1.01]"
+                : "bg-surface/30 border-border/40 text-text-secondary opacity-60 hover:opacity-100"
+            }`}
+          >
+            Jornada do Marcos
+          </button>
         </div>
 
         {/* Tab Headers */}
@@ -216,11 +369,11 @@ export default function JourneyMap() {
                 </div>
               </div>
 
-              {/* O que ela Pensa */}
+              {/* O que pensa */}
               <div className="space-y-2">
                 <h4 className="text-xs font-bold text-text-primary uppercase tracking-wider flex items-center gap-2">
                   <MessageSquare className="w-4 h-4 text-brand-strong" />
-                  O que ela Pensa / Citações
+                  O que pensa / Citações
                 </h4>
                 <div className="space-y-2">
                   {current.pensamentos.map((pens, i) => (
