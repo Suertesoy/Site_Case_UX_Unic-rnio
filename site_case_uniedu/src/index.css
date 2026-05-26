@@ -1,20 +1,60 @@
 @import "tailwindcss";
 
+:root {
+  --page: #FFFBFD; /* Light: soft pinkish off-white */
+  --surface: #FDF2F5; /* Light: slightly darker pinkish-white surface */
+  --surface-elevated: #FFFFFF; /* Light: pure white elevated surface */
+  
+  --text-primary: #1D1518; /* Light: very dark brownish-pink text */
+  --text-secondary: #6E5E64; /* Light: secondary text */
+  --border: rgba(216, 27, 96, 0.08); /* Light: pinkish subtle border */
+  
+  --brand: #D81B60; /* Primary pink */
+  --brand-soft: #F48FB1; /* Light/support pink */
+  --brand-strong: #A31545; /* Darker primary pink for accessible text in light mode */
+  
+  --hero-glow-1: rgba(216, 27, 96, 0.06);
+  --hero-glow-2: rgba(240, 98, 146, 0.03);
+}
+
+.dark {
+  --page: #120E10; /* Dark: warm warm black with rose touch */
+  --surface: #1E1A1D; /* Dark: surface */
+  --surface-elevated: #2A2228; /* Dark: elevated surface */
+  
+  --text-primary: #FCE4EC; /* Dark: soft rose text */
+  --text-secondary: #9E9EAE; /* Dark: secondary text */
+  --border: rgba(255, 255, 255, 0.08); /* Dark: subtle border */
+  
+  --brand: #D81B60;
+  --brand-soft: #F06292;
+  --brand-strong: #F48FB1; /* In dark mode, brand-strong is the bright accent pink */
+  
+  --hero-glow-1: rgba(216, 27, 96, 0.12);
+  --hero-glow-2: rgba(240, 98, 146, 0.06);
+}
+
 @theme {
-  --color-background-dark: #120E10;
-  --color-surface-dark: #1E1A1D;
-  --color-surface-elevated: #2A2228;
-  --color-primary-pink: #D81B60;
-  --color-support-pink: #F06292;
-  --color-accent-pink: #F48FB1;
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-strong: var(--brand-strong);
+  
+  --color-glow-1: var(--hero-glow-1);
+  --color-glow-2: var(--hero-glow-2);
 }
 
 @layer base {
   body {
-    background-color: #120E10;
-    color: #FFFFFF;
+    background-color: var(--page);
+    color: var(--text-primary);
     font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
 }
 
@@ -23,14 +63,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #120E10;
+  background: var(--page);
 }
 ::-webkit-scrollbar-thumb {
-  background: #2A2228;
+  background: var(--surface);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D81B60;
+  background: var(--brand);
 }
 
 html {
