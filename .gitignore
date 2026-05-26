@@ -1,0 +1,18 @@
+# Dependências e Builds
+node_modules/
+dist/
+.vercel/
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+
+# Logs e arquivos do sistema
+*.log
+.DS_Store
+Thumbs.db
+
+# Caches comuns
+.cache/
+.vite/
+coverage/
