@@ -7,10 +7,10 @@ export default function PersonaCard() {
   const personas = {
     sofia: {
       id: "sofia",
-      nome: "Sofia Martins",
+      nome: "Sofia",
       idade: 24,
       perfil: "Designer Gráfica em transição para UX/UI",
-      avatarInitials: "SM",
+      avatarInitials: "S",
       tags: ["Estudante EAD Noturna", "Transição de Carreira"],
       quote: "“Quero entender o básico de UX/UI sem perder tempo e conciliar com meu trabalho CLT.”",
       rotina: "Sofia trabalha em regime CLT como designer gráfica durante o dia. Seu tempo útil de estudos é à noite ou em pequenos intervalos de 15 minutos ao longo do dia. Busca migrar de carreira sem perder a segurança financeira.",
@@ -95,7 +95,7 @@ export default function PersonaCard() {
               : "bg-surface/30 border-border/40 text-text-secondary opacity-60 hover:opacity-100"
           }`}
         >
-          Sofia Martins
+          Sofia
         </button>
         <button
           onClick={() => setActivePersona("marcos")}

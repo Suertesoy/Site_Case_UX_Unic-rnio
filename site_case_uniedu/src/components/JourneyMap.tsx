@@ -286,7 +286,7 @@ export default function JourneyMap() {
                 : "bg-surface/30 border-border/40 text-text-secondary opacity-60 hover:opacity-100"
             }`}
           >
-            Jornada da Sofia Martins
+            Jornada da Sofia
           </button>
           <button
             onClick={() => handlePersonaChange("marcos")}

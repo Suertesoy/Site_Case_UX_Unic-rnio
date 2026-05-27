@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CheckCircle2, ChevronRight, AlertCircle, Sparkles, HelpCircle } from "lucide-react";
+import MockupReveal3D from "./MockupReveal3D";
 
 export default function ProductShowcase() {
   const [activeTab, setActiveTab] = useState("home");
@@ -21,7 +22,7 @@ export default function ProductShowcase() {
           <div className="flex justify-between items-center border-b border-border/40 pb-2">
             <div>
               <p className="text-[8px] text-text-secondary uppercase">BOM DIA,</p>
-              <p className="font-bold text-text-primary text-[11px]">Sofia Martins</p>
+              <p className="font-bold text-text-primary text-[11px]">Sofia</p>
             </div>
             <div className="bg-brand/10 border border-brand/20 rounded-full px-2 py-0.5 text-brand-strong text-[8px] font-bold">
               ⚡ 5 Dias Ativos
@@ -269,7 +270,8 @@ export default function ProductShowcase() {
 
         {/* Center: Device Mockup Placeholder */}
         <div className="lg:col-span-4 flex justify-center">
-          <div className="w-[300px] h-[550px] bg-black rounded-[48px] border-4 border-gray-800 shadow-2xl relative overflow-hidden flex-shrink-0 p-4 pt-10 flex flex-col justify-between transition-all duration-300">
+          <MockupReveal3D>
+            <div className="w-[300px] h-[550px] bg-black rounded-[48px] border-4 border-gray-800 shadow-2xl relative overflow-hidden flex-shrink-0 p-4 pt-10 flex flex-col justify-between transition-all duration-300">
             {/* Phone Speaker Notch */}
             <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-full z-20 flex items-center justify-center border border-gray-900">
               <div className="w-1.5 h-1.5 bg-gray-800 rounded-full" />
@@ -301,7 +303,8 @@ export default function ProductShowcase() {
                 Esta tela em HTML/CSS funciona como espaço reservado e será substituída por um print real do protótipo.
               </p>
             </div>
-          </div>
+            </div>
+          </MockupReveal3D>
         </div>
 
         {/* Right Side: Detailed strategic text breakdown */}
