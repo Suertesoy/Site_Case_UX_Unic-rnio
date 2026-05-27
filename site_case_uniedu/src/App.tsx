@@ -36,6 +36,7 @@ import ResearchTensions from "./components/ResearchTensions";
 import ProductShowcase from "./components/ProductShowcase";
 import MockupReveal3D from "./components/MockupReveal3D";
 import RevealOnScroll from "./components/RevealOnScroll";
+import DesignSystemSection from "./components/DesignSystemSection";
 
 export default function App() {
   // Theme State
@@ -101,6 +102,7 @@ export default function App() {
             <a href="#pesquisa" className="text-xs font-medium text-text-secondary hover:text-brand-strong transition-colors">Pesquisa</a>
             <a href="#estrategia" className="text-xs font-medium text-text-secondary hover:text-brand-strong transition-colors">Estratégia</a>
             <a href="#produto" className="text-xs font-medium text-text-secondary hover:text-brand-strong transition-colors">Produto</a>
+            <a href="#design-system" className="text-xs font-medium text-text-secondary hover:text-brand-strong transition-colors">Design System</a>
             <a href="#validacao" className="text-xs font-medium text-text-secondary hover:text-brand-strong transition-colors">Validação</a>
             <a href="#valor" className="text-xs font-medium text-text-secondary hover:text-brand-strong transition-colors">Valor Institucional</a>
             <a href="#aprendizados" className="text-xs font-medium text-text-secondary hover:text-brand-strong transition-colors">Aprendizados</a>
@@ -825,7 +827,10 @@ export default function App() {
         <ProductShowcase />
       </RevealOnScroll>
 
-      {/* 12. VALIDAÇÃO COM USUÁRIOS */}
+      {/* 12. DESIGN SYSTEM */}
+      <DesignSystemSection />
+
+      {/* 13. VALIDAÇÃO COM USUÁRIOS */}
       <section id="validacao" className="py-24 max-w-7xl mx-auto px-6 relative transition-all duration-300">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
