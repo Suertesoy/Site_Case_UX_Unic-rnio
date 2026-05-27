@@ -121,7 +121,7 @@ export default function App() {
             </button>
 
             <a
-              href="https://projeto-uniedu-corrigido.vercel.app/home"
+              href="https://projeto-uniedu.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-brand text-white rounded-xl text-xs font-bold tracking-wide hover:bg-opacity-90 active:scale-95 transition-all flex items-center gap-1.5 shadow-lg shadow-brand/25 border border-brand"
@@ -152,10 +152,48 @@ export default function App() {
           </RevealOnScroll>
 
           <RevealOnScroll direction="up" delay={200} duration={900}>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.3] mb-6 pb-3 transition-all duration-300">
-              <span className="hero-dark-line hero-dark-1">Gamificação do aprendizado para</span>
-              <span className="hero-dark-line hero-dark-2">transformar</span>
-              <span className="hero-gradient-line">constância em progresso real<span className="progress-staircase" aria-hidden="true"><span className="stair stair-1" /><span className="stair stair-2" /><span className="stair stair-3" /><span className="stair stair-4" /><span className="stair stair-5" /><span className="stair-spark spark-1" /><span className="stair-spark spark-2" /><span className="stair-spark spark-3" /><span className="stair-spark spark-4" /></span></span>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.3] mb-6 pb-3 transition-all duration-300" aria-label="Gamificação do aprendizado para transformar constância em progresso real">
+              {/* Desktop/Tablet version */}
+              <span className="hidden md:block" aria-hidden="true">
+                <span className="hero-dark-line hero-dark-1">Gamificação do aprendizado para</span>
+                <span className="hero-dark-line hero-dark-2">transformar</span>
+                <span className="hero-gradient-line hero-gradient-1">
+                  constância em progresso real
+                  <span className="progress-staircase" aria-hidden="true">
+                    <span className="stair stair-1" />
+                    <span className="stair stair-2" />
+                    <span className="stair stair-3" />
+                    <span className="stair stair-4" />
+                    <span className="stair stair-5" />
+                    <span className="stair-spark spark-1" />
+                    <span className="stair-spark spark-2" />
+                    <span className="stair-spark spark-3" />
+                    <span className="stair-spark spark-4" />
+                  </span>
+                </span>
+              </span>
+
+              {/* Mobile version */}
+              <span className="block md:hidden" aria-hidden="true">
+                <span className="hero-dark-line hero-mob-dark-1">Gamificação do</span>
+                <span className="hero-dark-line hero-mob-dark-2">aprendizado para</span>
+                <span className="hero-dark-line hero-mob-dark-3">transformar</span>
+                <span className="hero-gradient-line hero-mob-grad-1">constância em</span>
+                <span className="hero-gradient-line hero-mob-grad-2">
+                  progresso real
+                  <span className="progress-staircase mobile-staircase" aria-hidden="true">
+                    <span className="stair stair-1" />
+                    <span className="stair stair-2" />
+                    <span className="stair stair-3" />
+                    <span className="stair stair-4" />
+                    <span className="stair stair-5" />
+                    <span className="stair-spark spark-1" />
+                    <span className="stair-spark spark-2" />
+                    <span className="stair-spark spark-3" />
+                    <span className="stair-spark spark-4" />
+                  </span>
+                </span>
+              </span>
             </h1>
           </RevealOnScroll>
 
@@ -190,7 +228,7 @@ export default function App() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="https://projeto-uniedu-corrigido.vercel.app/home"
+                href="https://projeto-uniedu.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 bg-surface text-text-primary border border-border rounded-2xl text-sm font-bold tracking-wide hover:bg-surface-elevated active:scale-98 transition-all flex items-center justify-center gap-2"
@@ -257,7 +295,7 @@ export default function App() {
 
                   <div className="pt-4">
                     <a
-                      href="https://projeto-uniedu-corrigido.vercel.app/home"
+                      href="https://projeto-uniedu.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand text-white rounded-xl text-xs font-bold tracking-wide hover:bg-opacity-95 shadow-md shadow-brand/10 transition-all active:scale-98"
@@ -1094,7 +1132,7 @@ export default function App() {
             <RevealOnScroll direction="up" delay={200} duration={800}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href="https://projeto-uniedu-corrigido.vercel.app/home"
+                  href="https://projeto-uniedu.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-8 py-4 bg-brand text-white rounded-2xl text-xs font-bold tracking-wide hover:bg-opacity-95 shadow-lg shadow-brand/20 transition-all active:scale-98 flex items-center justify-center gap-2"

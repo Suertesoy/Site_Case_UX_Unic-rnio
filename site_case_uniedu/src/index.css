@@ -161,9 +161,17 @@ html {
 }
 
 /* Per-line animation delays — continuous, no gaps, proportional to visual width */
+/* Desktop animations */
 .hero-dark-1        { animation: fillProgress 0.85s linear 0.9s  forwards; }
 .hero-dark-2        { animation: fillProgress 0.30s linear 1.75s forwards; }
-.hero-gradient-line { animation: fillProgress 0.85s linear 2.05s forwards; }
+.hero-gradient-1    { animation: fillProgress 0.85s linear 2.05s forwards; }
+
+/* Mobile animations (Gamificação do -> aprendizado para -> transformar -> constância em -> progresso real) */
+.hero-mob-dark-1    { animation: fillProgress 0.40s linear 0.90s forwards; }
+.hero-mob-dark-2    { animation: fillProgress 0.45s linear 1.30s forwards; }
+.hero-mob-dark-3    { animation: fillProgress 0.30s linear 1.75s forwards; }
+.hero-mob-grad-1    { animation: fillProgress 0.40s linear 2.05s forwards; }
+.hero-mob-grad-2    { animation: fillProgress 0.45s linear 2.45s forwards; }
 
 /* Progress staircase — appears after fill completes, then fades out */
 .progress-staircase {
@@ -270,9 +278,23 @@ html {
     background-size: 100% 100%, 100% 100% !important;
     animation: none !important;
   }
+  .hero-dark-1, .hero-dark-2, .hero-gradient-1,
+  .hero-mob-dark-1, .hero-mob-dark-2, .hero-mob-dark-3,
+  .hero-mob-grad-1, .hero-mob-grad-2 {
+    animation: none !important;
+  }
   /* Hide staircase entirely for reduced motion */
   .progress-staircase {
     display: none !important;
+  }
+}
+
+/* Mobile staircase scaling */
+@media (max-width: 768px) {
+  .mobile-staircase {
+    transform: scale(0.75);
+    transform-origin: left bottom;
+    margin-left: 4px;
   }
 }
 
