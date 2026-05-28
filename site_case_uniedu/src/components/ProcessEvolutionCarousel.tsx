@@ -97,12 +97,18 @@ export default function ProcessEvolutionCarousel() {
   const scrollTo = useCallback((index: number) => {
     const clamped = Math.max(0, Math.min(index, steps.length - 1));
     setActiveIndex(clamped);
-    scrollRef.current?.scrollTo({ left: clamped * CARD_STEP, behavior: "smooth" });
+    if (scrollRef.current) {
+      const firstCard = scrollRef.current.querySelector(".carousel-card");
+      const cardStep = firstCard ? firstCard.clientWidth + 20 : CARD_STEP;
+      scrollRef.current.scrollTo({ left: clamped * cardStep, behavior: "smooth" });
+    }
   }, []);
 
   const handleScroll = useCallback(() => {
     if (!scrollRef.current) return;
-    const idx = Math.round(scrollRef.current.scrollLeft / CARD_STEP);
+    const firstCard = scrollRef.current.querySelector(".carousel-card");
+    const cardStep = firstCard ? firstCard.clientWidth + 20 : CARD_STEP;
+    const idx = Math.round(scrollRef.current.scrollLeft / cardStep);
     setActiveIndex(Math.max(0, Math.min(idx, steps.length - 1)));
   }, []);
 
@@ -126,6 +132,10 @@ export default function ProcessEvolutionCarousel() {
           .marquee-container {
             overflow-x: hidden !important;
             scroll-snap-type: none !important;
+            padding-top: 15px !important;
+            padding-bottom: 25px !important;
+            margin-top: -15px !important;
+            margin-bottom: -25px !important;
           }
           
           .marquee-track {
@@ -174,6 +184,10 @@ export default function ProcessEvolutionCarousel() {
             .marquee-container {
               overflow-x: auto !important;
               scroll-snap-type: x mandatory !important;
+              padding-top: 0 !important;
+              padding-bottom: 0 !important;
+              margin-top: 0 !important;
+              margin-bottom: 0 !important;
             }
             .marquee-track {
               animation: none !important;
@@ -249,13 +263,13 @@ export default function ProcessEvolutionCarousel() {
                 return (
                   <article
                     key={`${step.id}-${index}`}
-                    className={`carousel-card flex-shrink-0 w-[256px] bg-surface border border-border rounded-3xl overflow-hidden flex flex-col transition-all duration-300 ${
+                    className={`carousel-card flex-shrink-0 w-[256px] lg:w-[320px] xl:w-[350px] bg-surface border border-border rounded-3xl overflow-hidden flex flex-col transition-all duration-300 ${
                       index >= steps.length ? "hidden lg:flex" : "flex"
                     }`}
                     style={{ scrollSnapAlign: "start" }}
                   >
                     {/* Image area — portrait proportions ~9:14 */}
-                    <div className="relative w-full h-[400px] bg-surface-elevated overflow-hidden flex-shrink-0">
+                    <div className="relative w-full h-[400px] lg:h-[500px] xl:h-[550px] bg-surface-elevated overflow-hidden flex-shrink-0">
 
                       {/* Step number badge */}
                       <div className="absolute top-3 left-3 z-10">
