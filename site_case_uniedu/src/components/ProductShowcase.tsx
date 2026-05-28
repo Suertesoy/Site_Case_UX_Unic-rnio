@@ -192,21 +192,10 @@ export default function ProductShowcase() {
           </div>
         </div>
 
-        {/* Center: phone frame with real screenshot */}
+        {/* Center: clean frame — image is the final artwork, no duplicate phone hardware */}
         <div className="lg:col-span-5 flex justify-center">
           <MockupReveal3D>
-            <div className="w-[280px] h-[560px] bg-[#111] rounded-[44px] border-[5px] border-[#2a2a2a] shadow-2xl relative overflow-hidden flex-shrink-0 transition-all duration-300">
-
-              {/* Dynamic Island */}
-              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#111] rounded-full z-20 flex items-center justify-center border border-[#1a1a1a]">
-                <div className="w-1.5 h-1.5 bg-[#222] rounded-full" />
-              </div>
-
-              {/* Side buttons — decorative */}
-              <div className="absolute left-[-7px] top-[90px] w-1 h-8 bg-[#2a2a2a] rounded-l-sm" />
-              <div className="absolute left-[-7px] top-[130px] w-1 h-12 bg-[#2a2a2a] rounded-l-sm" />
-              <div className="absolute left-[-7px] top-[154px] w-1 h-12 bg-[#2a2a2a] rounded-l-sm" />
-              <div className="absolute right-[-7px] top-[120px] w-1 h-16 bg-[#2a2a2a] rounded-r-sm" />
+            <div className="w-[280px] h-[560px] rounded-3xl shadow-xl border border-border/40 relative overflow-hidden flex-shrink-0 transition-all duration-300">
 
               {/* Screenshot area */}
               {imageError ? (
